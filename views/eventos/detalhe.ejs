@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eventos</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Detalhes dos Usuários</h1>
+    <p>
+      <a href="/eventos/">Voltar</a>
+    </p>
+    <p>
+      <strong>Nome: </strong><%= users.name %>
+      <strong>Email: </strong><%= users.email %>
+      <strong>Senha: </strong><%= users.password %>
+    </p>
+    <p>
+      <form action="/eventos/deletar/<%= users.id %>" method="POST">
+        <input type="submit" value="Excluir" />
+      </form>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Editar usuário</title>
+</head>
+<body>
+    <h1>Editar usuário</h1>
+    <p>
+        <a href="/eventos">Voltar</a>
+    </p>
+
+    <% if (typeof(errors) != "undefined" ) { %>
+        <div style="color: red; border: 1px solid red;">
+          <ul>
+            <% for(let i=0; i < errors.length; i++) { %>
+              <li>
+                <%= errors[i] %>
+              </li>
+              <% } %>
+          </ul>
+        </div>
+      <% } %>
+
+      <form action="/eventos/<%= users.id %>" method="POST">
+
+        <input type="hidden" id="id" name="id" value="<%= users.id %>" /><br>
+
+        <label for="name">Nome de usuario:</label><br>
+        <input type="text" id="username" name="<%= users.username %>"><br>
+
+        <label for="name">Nome:</label><br>
+        <input type="text" id="name" name="<%= users.name %>"><br>
+
+        <label for="name">Email:</label><br>
+        <input type="email" id="email" name="<%= users.email %>"><br>
+
+        <label for="name">Senha:</label><br>
+        <input type="password" id="password" name="<%= users.password %>"><br>
+
+        <input type="submit" value="Submeter">
+      </form>
+</body>
+</html>

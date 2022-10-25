@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Usuarios</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Usuários</h1>
+    <p><a href="/eventos/novo">Novo Usuário Show da Bola</a></p>
+    <ul>
+      <% for(var i=0; i < users.length; i++) { %>
+       <li><a href="/eventos/<%= users[i].id %>"><%= users[i].name %></a></li> 
+       <a href="/eventos/editar/<%= users[i].id %>">Editar</a> 
+      <% } %>
+    </ul>
+  </body>
+</html>
